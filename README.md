@@ -43,6 +43,7 @@ Figure-3 Job Involvement Survey
 In order to analyze the different event types, team has created a variable “turnover type” which contains the description of event types, which means if Turnover is “Yes” then only some event will occur and what Type can be determined by 1,2,3,4 values in type column.
     
 ![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773578/26ecdc46-651d-11e6-952f-1bfca6ae6e77.png)
+
 Figure-4   -Different Turnover Types   
 
 else Turnover will have a value No stating an employee is not leaving from the organization. 
