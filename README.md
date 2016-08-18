@@ -30,12 +30,15 @@ To analyze the situation further, HR Department wants to examine the data based 
 Initially, the team has received the data of Fermalogis’ employee’s attrition which contains 76 variables with 1470 observations. But later on Fermalogis has decided to give an extra property of different turnover types. Dataset contain the variable “Turnover” which indicates whether a particular employee has churned but due to different event types, team has decided to consider “Type” as our target variable. Dataset has different explanatory variables such as how long the employee has been in the company, what are their performance ratings and salary hike; which has helped us to hazards related to the important factors affecting turnover and building the best model. Then, some of the important surveys conducted by the organization helped us find the survival analysis of employees such as:
  
 ![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773579/26f35b52-651d-11e6-84f8-a57189c46a17.png)
+
 Figure-1 Environmental satisfaction Survey                                                         
 
 ![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773577/26eb421e-651d-11e6-853e-d1c9a776cd08.png)
+
 Figure-2 Relationship Satisfaction Survey                                                                     
 
 ![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773576/26eaf00c-651d-11e6-9fbe-ba503578bc66.png)
+
 Figure-3 Job Involvement Survey        
 
 ##Data Pre-Processing
@@ -79,25 +82,28 @@ To view the most relevant features of the dataset, the team has used data explor
  
  
  ![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773583/26f94bfc-651d-11e6-920c-d07c89f75749.png)
+ 
                                                    Figure-5 Distribution of Different event types
                                       
                                                    
 **Business Travel Vs Turnover Types**: Below graph has been plotted to identify the relation between variables turnover types and Business Travel and found that in all the four event type - Involuntary, Job Termination, Resignation and Voluntary retirement, people who are travelling frequently are more prone to leave the company.
  
-  ![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773575/26eaa232-651d-11e6-99f9-054dd7890344.png)
-                                                              Figure-6 Business Travel Vs Turnover Types                              
+![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773575/26eaa232-651d-11e6-99f9-054dd7890344.png)
+Figure-6 Business Travel Vs Turnover Types                              
                                                               
 **Stock Vs Turnover Types** -We have created a stock variable to check the effect of this covariate on different turnover types and have plotted their respective survival curves.
 
-**Retirement **– -2Log(LR) test shows that P-values for the employees having stock and not having stocks is not significant which means survival probability for retired employees is independent of stock variable and is almost same for both employees having the stocks and not having the stocks.
+**Retirement ** – -2Log(LR) test shows that P-values for the employees having stock and not having stocks is not significant which means survival probability for retired employees is independent of stock variable and is almost same for both employees having the stocks and not having the stocks.
    
 ![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773580/26f3bb10-651d-11e6-907a-0a05700ee227.png)
+
 Figure-7 P value of stocks on Retirement                                                           
 
 ![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773581/26f41baa-651d-11e6-8db5-36ea28a4e97b.png)
+
 Figure-8 Survival curves of Retirement w.r.t stock
 
-**Involuntary resignation **- It has a significant difference between people who are holding stocks and people does not, People who holds stock might not want to leave the company, one possibility is when they have health or personal issues they might take leave and get well come back to the organization. Motivating people towards holding stocks can actually reduce this type of turnover.
+**Involuntary resignation ** - It has a significant difference between people who are holding stocks and people does not, People who holds stock might not want to leave the company, one possibility is when they have health or personal issues they might take leave and get well come back to the organization. Motivating people towards holding stocks can actually reduce this type of turnover.
      
 Figure-9 P value test of stocks on Involuntary Resignation                                                           
 
