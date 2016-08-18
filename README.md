@@ -494,11 +494,12 @@ Figure 2 Analysis of Maximum Likelihood Estimates
 
 Termination event type model:
  
-    ![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773617/2727c630-651d-11e6-8568-afb4ea8fa3d1.png)
+![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773617/2727c630-651d-11e6-8568-afb4ea8fa3d1.png)
 
 Figure 3 Termination covariates
  
-     ![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773616/2726c08c-651d-11e6-9bb7-94cfc26c9db2.png)
+ 
+![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773616/2726c08c-651d-11e6-9bb7-94cfc26c9db2.png)
 
 Figure 4 Analysis of likelihood estimates for covariates
 
