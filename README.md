@@ -1,29 +1,31 @@
 # Survival-Analysis-for-Predicting-Employee-Turnover
-Executive Summary 
+##Executive Summary 
 
 Employee Churn is a major problem for many firms these days. If a company does not have satisfied employees, it will not have satisfied customers and there could be possibility of not having satisfied shareholders as well. Great talent is scarce and in high demand in this competitive era and it is very hard to keep the great talent within the same organization. Apparently, it becomes utmost important to understand the drivers of employee dissatisfaction. Fermalogis, a pharmaceutical company are also facing the issue of employee turnover and in order to understand the drivers of employee dissatisfaction, the team have received the data from them to do the survival analysis which is one of the core strategic tool to understand the drivers of employee dissatisfaction.
 
 To start with, our team have used SAS studio to analyze the data of 1470 employees having 77 different variables to not only identify the number or percentage of workers who leave an organization due to different attrition types such as Involuntary, Termination, Voluntary and Retirement but also the factors causing attrition. The team has built different models using Proportional Hazards based on Cox’s partial likelihood estimate method to estimate regression models with censored data and to investigate the time to event data. Cox's semiparametric modeling allows for no assumptions to be made about the parametric distribution of the survival times, making the method considerably more robust and helped us in identifying some variables which has non proportional effect on hazard such as NumCompaniesWorked, TotalWorkingYears, YearsInCurrentRole. After model evaluation, the team has identified that all the event types are independent of each other and need to be handled separately so team has decided to employ competing risks to analyze the different types of turnover. With this analysis, the team can enable Fermalogis to identify the key factors for voluntary resignation which is the main concern for the company and preemptively address costly departures.
 
-Business Problem
+##Business Problem
   
 Recently, Fermalogis found that their rival companies are recruiting the trained employees of Fermalogis with high transfer fees and higher salaries which has created a threat of losing the talent from their organization. COO - Larry Hansen wanted to know who are leaving their company and why they are leaving so that they can take the necessary measures to prevent their employees from leaving. They have elaborated the data in basically two groups:
 
-Young employees: The team are investing a lot on the new employees in terms of professional training and salary without return for the first three years. Only after three years, company started getting benefit from that new employee. But, at that time, they become more competent professionally and seek new career opportunities with higher salary and leave the company. 
+###Young employees:
+The team are investing a lot on the new employees in terms of professional training and salary without return for the first three years. Only after three years, company started getting benefit from that new employee. But, at that time, they become more competent professionally and seek new career opportunities with higher salary and leave the company. 
 
-Experienced employees: Company has an Executive Training Program. It is a very intense and useful program. Every year, experienced employees (with the company for 5 years or more) are sent to a training center. They gain a lot and they become even more competent each year.
+###Experienced employees:
+Company has an Executive Training Program. It is a very intense and useful program. Every year, experienced employees (with the company for 5 years or more) are sent to a training center. They gain a lot and they become even more competent each year.
 
 To analyze the situation further, HR Department wants to examine the data based on different attrition types rather than considering the turnover as same because each types might have different properties and seems to handled separately. Different attrition types provided are –
 
-	Involuntary Resignation – Employment decision to terminate the employees because of health problems or family problems etc.
+**Involuntary Resignation** – Employment decision to terminate the employees because of health problems or family problems etc.
 
-	Voluntary Resignation -  When an employee leaves the company of her own volition, it's called voluntary termination.
+**Voluntary Resignation** -  When an employee leaves the company of her own volition, it's called voluntary termination.
 
-	Retirement -  Retirement is the point in time when an employee chooses to leave his or her employment permanently.
+**Retirement** -  Retirement is the point in time when an employee chooses to leave his or her employment permanently.
 
-	Job termination - When an employee fired from the company because of poor performance, excessive absenteeism or violation of a workplace policy.
+**Job termination** - When an employee fired from the company because of poor performance, excessive absenteeism or violation of a workplace policy.
 
-Data Overview
+##Data Overview
 
 Initially, the team has received the data of Fermalogis’ employee’s attrition which contains 76 variables with 1470 observations. But later on Fermalogis has decided to give an extra property of different turnover types. Dataset contain the variable “Turnover” which indicates whether a particular employee has churned but due to different event types, team has decided to consider “Type” as our target variable. Dataset has different explanatory variables such as how long the employee has been in the company, what are their performance ratings and salary hike; which has helped us to hazards related to the important factors affecting turnover and building the best model. Then, some of the important surveys conducted by the organization helped us find the survival analysis of employees such as:
  Figure-1 Environmental satisfaction Survey                                                         
