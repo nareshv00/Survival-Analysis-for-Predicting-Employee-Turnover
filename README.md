@@ -71,31 +71,25 @@ The Cox model has the flexibility to introduce time dependent explanatory variab
 We have used LIFETEST method to know if there is difference in the survival curves of turnover Types and what these differences look like graphically. This procedure will produce survival function estimates and plot them, as well as give the Wilcoxon and Log Rank statistics for testing the equality of the survival function estimates of the two or more different types.
 
 
-Data Exploration
-
+##Data Exploration
 
 To view the most relevant features of the dataset, the team has used data exploration in survival analysis using SGPLOT, MOSAICPLOT, FREQPLOT which provide the statistical analysis, significant information and correlation among variables.
-	Distribution of event type: Team has decided to plot the distribution of different event types to identify the event type corresponding to maximum number of employees leaving the company and found that all event types are in different proportion with respect to employees and maximum number of employees belongs to Voluntary resignation event type.
+
+**Distribution of event type**: Team has decided to plot the distribution of different event types to identify the event type corresponding to maximum number of employees leaving the company and found that all event types are in different proportion with respect to employees and maximum number of employees belongs to Voluntary resignation event type.
  
  
  ![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773583/26f94bfc-651d-11e6-920c-d07c89f75749.png)
                                                    Figure-5 Distribution of Different event types
                                       
                                                    
-	Business Travel Vs Turnover Types: Below graph has been plotted to identify the relation between variables turnover types and Business Travel and found that in all the four event type - Involuntary, Job Termination, Resignation and Voluntary retirement, people who are travelling frequently are more prone to leave the company.
- 
+**Business Travel Vs Turnover Types**: Below graph has been plotted to identify the relation between variables turnover types and Business Travel and found that in all the four event type - Involuntary, Job Termination, Resignation and Voluntary retirement, people who are travelling frequently are more prone to leave the company.
  
   ![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773575/26eaa232-651d-11e6-99f9-054dd7890344.png)
                                                               Figure-6 Business Travel Vs Turnover Types                              
                                                               
-                                                              
-Stock Vs Turnover Types -
+**Stock Vs Turnover Types** -We have created a stock variable to check the effect of this covariate on different turnover types and have plotted their respective survival curves.
 
-We have created a stock variable to check the effect of this covariate on different turnover types and have plotted their respective survival curves.
-
-Retirement – 
-	
--2Log(LR) test shows that P-values for the employees having stock and not having stocks is not significant which means survival probability for retired employees is independent of stock variable and is almost same for both employees having the stocks and not having the stocks.
+**Retirement **– -2Log(LR) test shows that P-values for the employees having stock and not having stocks is not significant which means survival probability for retired employees is independent of stock variable and is almost same for both employees having the stocks and not having the stocks.
    
 ![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773580/26f3bb10-651d-11e6-907a-0a05700ee227.png)
 Figure-7 P value of stocks on Retirement                                                           
@@ -103,9 +97,7 @@ Figure-7 P value of stocks on Retirement
 ![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773581/26f41baa-651d-11e6-8db5-36ea28a4e97b.png)
 Figure-8 Survival curves of Retirement w.r.t stock
 
-Involuntary resignation - 
-
-It has a significant difference between people who are holding stocks and people does not, People who holds stock might not want to leave the company, one possibility is when they have health or personal issues they might take leave and get well come back to the organization. Motivating people towards holding stocks can actually reduce this type of turnover.
+**Involuntary resignation **- It has a significant difference between people who are holding stocks and people does not, People who holds stock might not want to leave the company, one possibility is when they have health or personal issues they might take leave and get well come back to the organization. Motivating people towards holding stocks can actually reduce this type of turnover.
      
 Figure-9 P value test of stocks on Involuntary Resignation                                                           
 
