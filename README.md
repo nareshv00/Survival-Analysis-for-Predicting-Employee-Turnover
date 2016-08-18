@@ -83,12 +83,13 @@ To view the most relevant features of the dataset, the team has used data explor
  
  ![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773583/26f94bfc-651d-11e6-920c-d07c89f75749.png)
  
-                                                   Figure-5 Distribution of Different event types
-                                      
-                                                   
+ Figure-5 Distribution of Different event types
+ 
+   
 **Business Travel Vs Turnover Types**: Below graph has been plotted to identify the relation between variables turnover types and Business Travel and found that in all the four event type - Involuntary, Job Termination, Resignation and Voluntary retirement, people who are travelling frequently are more prone to leave the company.
  
 ![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773575/26eaa232-651d-11e6-99f9-054dd7890344.png)
+
 Figure-6 Business Travel Vs Turnover Types                              
                                                               
 **Stock Vs Turnover Types** -We have created a stock variable to check the effect of this covariate on different turnover types and have plotted their respective survival curves.
@@ -103,7 +104,7 @@ Figure-7 P value of stocks on Retirement
 
 Figure-8 Survival curves of Retirement w.r.t stock
 
-**Involuntary resignation ** - It has a significant difference between people who are holding stocks and people does not, People who holds stock might not want to leave the company, one possibility is when they have health or personal issues they might take leave and get well come back to the organization. Motivating people towards holding stocks can actually reduce this type of turnover.
+**Involuntary resignation** - It has a significant difference between people who are holding stocks and people does not, People who holds stock might not want to leave the company, one possibility is when they have health or personal issues they might take leave and get well come back to the organization. Motivating people towards holding stocks can actually reduce this type of turnover.
      
 ![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773586/26fc49ce-651d-11e6-9b8c-584a3470cfbb.png)
 
@@ -201,55 +202,62 @@ To add to the above point, our team has plotted LLS graphs for all 4 event types
 
 Modelling using PHREG for each event type shows the value for Nested event type as 2221.764, Retirement is 128.64, Voluntary Resignation is 971.656, Involuntary as 499.934 and termination as 379.974
  
-                                 Figure-24 Model comparison for combine 4 event types  
-                                 
-                                 
+ ![alt tag]( https://cloud.githubusercontent.com/assets/19517513/17773600/270f0e88-651d-11e6-8342-32b383aec7c9.png)
+
+ Figure-24 Model comparison for combine 4 event types  
+
 Null Hypothesis states that “combined all event types have the same effect on turnover of employees as Individual event type”. But looking at the p-value which is equal to 0, will reject the null hypothesis and this proves the fact that we need to build an independent model for each event type.
  
-                                    Figure-25 Null Hypothesis test for combine 4 event types
-                                    
-                                    
+![alt tag]( https://cloud.githubusercontent.com/assets/19517513/17773603/2713d3be-651d-11e6-8469-160248972b7b.png)
+
+Figure-25 Null Hypothesis test for combine 4 event types
+
 But our team found that Involuntary resignation and Job termination are linearly related so we have built the combine model for these two events and found that p-value is 0.256 which signify that these two models are similar and can be built together.
  
- 
-                     Figure-26 Model comparison for combine 2 event types  (Involuntary & termination)
- 
- 
-                  Figure-27 Null Hypothesis test for combine 2 event type (Involuntary & termination)
-                  
+![alt tag]( https://cloud.githubusercontent.com/assets/19517513/17773598/270e7fb8-651d-11e6-9b47-899ab8ba09ad.png)
 
-Modelling
+Figure-26 Model comparison for combine 2 event types  (Involuntary & termination)
+ 
+![alt tag]( https://cloud.githubusercontent.com/assets/19517513/17773599/270eba28-651d-11e6-9737-96e257b58c62.png)
 
-COX Proportional Hazards Model:
+Figure-27 Null Hypothesis test for combine 2 event type (Involuntary & termination)
+
+
+##Modelling##
+
+#####COX Proportional Hazards Model:#####
 
 Cox Proportional Model is similar to logistic regression function, where it enables us to know the hazard ratio between two groups considering the covariates, In our case the ratio of the hazard between the Turnover employees and No turnover employees. The hazard is the probability of employees leaving the company(Turnover) to the employees who are not leaving the company at a given point of time. One of the primary reasons we choose Cox Proportional Model because it does not need any distribution to be known to run the model.
 
-Tied Data:
+**Tied Data**:
 
 Tied data is something where two records have the same time to the event, we have handled this using Efron method which suits well for small data sets having heavily tied data which is true in our case. The Primary reason to handle the tied data is cox proportional hazard model is sensitive to tied data.
 
-Our Initial Hypothesis was built on:
+**Our Initial Hypothesis was built on**:
 
-We have considered all the four different turnover types: (Retirement, Voluntary Resignation, Involuntary Resignation, Job Termination, Employee is Fired). We have modelled the data separately for all the turnover types together and individually. Consequently, we have determined that separate models are better in explaining the turnover than a nested model. All these steps are explained in detail. We have built different hypothesis for four different types.
+**We have considered all the four different turnover types**: (Retirement, Voluntary Resignation, Involuntary Resignation, Job Termination, Employee is Fired). We have modelled the data separately for all the turnover types together and individually. Consequently, we have determined that separate models are better in explaining the turnover than a nested model. All these steps are explained in detail. We have built different hypothesis for four different types.
 
 Our focus was to find the significant covariates which affects the four types of turnovers in the company, this will help the organization to focus on these attributes and reducing the attrition rate.
 
-Finding the Important covariates affecting the different type of attrition:
+**Finding the Important covariates affecting the different type of attrition**:
 	
 In this Part we have used the nested model considering 0 as censored and others all the other types as events, our team has built hypothesis using the COX model for all the covariates. Using step wise regression, we have eliminated few of the covariates which are not significant. In addition, we have created few variables using the existing data as explained. The primary motive in this section is to identify the significant variables which are time dependent.
 
-Bonus:
+**Bonus**:
 
 We have identified bonus as the time dependent variable and handled it by taking the cumulative sum of all the bonus amount employee’s received by serving the company up to forty year of tenure, for which it is needed to create 40 new variables from cum1-cum40. However, while calling in the model we have sent this bonus variable with respect to “YearsAtCompany” which provides information of employee’s tenure duration at the company.
 
 Methodology is as follows 
+
 	If an employee’s experience at company is 4, we have used the variable cumulative 3 as the input.
+	
 	If an employee’s experience at company is 40, we have send the variable cumulative 39 as the input.
 
-Checking Non Proportionality:
+**Checking Non Proportionality**:
+
 We have used the residuals tests such as Martingale using ASSESS statement and Schoenfeld in determining the time dependent variables. We have only considered the significant variables to find the time dependent variables rather than considering all the variables of the employees. 
 
-Martingale Residuals: 
+**Martingale Residuals**: 
 
 This is calculated by creating the possible simulations of data without time dependency, if the covariate is time dependent then the actual pattern will be heavily biased the created set of simulations. Using the assess statement in SAS, we have computed the 
 martingale residuals. 
@@ -257,50 +265,50 @@ martingale residuals.
 Below simulation graph shows the thick blue line indicating the actual pattern heavily deviating from the simulated possibilities with significant p-value which proves it is a time dependent covariate.
 Proportional hazard assumption states that all those covariates which are not deviating from theoretical expectations and their p-values is not significant considered to be proportional covariate else it is non proportional covariate dependent on time
  
-                     Figure-28 Checking Proportional Hazard assumption for Years in Current role
+ ![alt tag]( https://cloud.githubusercontent.com/assets/19517513/17773601/270f64e6-651d-11e6-9bfc-ae6593d3f3e9.png)
+
+ Figure-28 Checking Proportional Hazard assumption for Years in Current role
 
 Figure 29 shows Supremum Test for Proportional Hazards Assumption which contained the p-values of all the variables of employees which also signify that Years in current role is significantly low and states the simulations created and actual trends are different for this variable hence found that years in current role is dependent on the Years at the company
 
  
- 
-                    Figure-29 Null Hypothesis test for finding time dependent covariate
+  ![alt tag]( https://cloud.githubusercontent.com/assets/19517513/17773602/270ff4ec-651d-11e6-934b-c501446648a9.png)
+  ![alt tag]( https://cloud.githubusercontent.com/assets/19517513/17773604/27146220-651d-11e6-8b02-0926d44819c1.png)
 
-Schoenfeld Residuals: 
+  Figure-29 Null Hypothesis test for finding time dependent covariate
+
+**Schoenfeld Residuals**: 
 
 Schoenfeld residual is the difference between the covariate value of the subject failed and the expected value of the covariate for the subject who fails at that time point. We have used this procedure to check the residuals of the significant covariates are correlated to employee’s years at the company which is the event time. If the relation is strong we say they are time dependent/non Proportional, else, we say them as independent of time or proportional.
 We have only considered the numerical values to find the linear relation, we used the years at company, log years at company and quadratics function years at company variable to find the relation in different aspects of linearity and non-linearity. Grey colored values in the below figure have a significant relation with the employee’s years at the company.
  
-    
-    Figure-30 Pearson Correlation Coefficient for Time Dependent (Non Proportional) Covariate
+![alt tag]( https://cloud.githubusercontent.com/assets/19517513/17773609/271a37c2-651d-11e6-9e6d-af8a33d23e51.png)
 
-
-
+Figure-30 Pearson Correlation Coefficient for Time Dependent (Non Proportional) Covariate
 
 
 We have used Schoenfeld Residuals below to determine the negative correlation found for Number of Companies worked with Years at Company. When employee’s number of companies worked previously is more, his experience in the current company is less, which means for observation 778 have worked for 7 companies but has 2 years of work experience at FermaLogis which signifies that it is a time dependent covariate.
 
- 
-                                     Figure-31 Schoenfeld residuals for Numbers of Companies worked
+ ![alt tag]( https://cloud.githubusercontent.com/assets/19517513/17773605/27157fca-651d-11e6-9a77-17349eafcc5f.png)
 
-
-
-
+Figure-31 Schoenfeld residuals for Numbers of Companies worked
 
 Next non proportional covariate is Total Working Years, this value is increasing with increase of YearsAtCompany linearly which is a basic phenomenon where the number of years in the current company will also add to the total experience and there is no wonder both are related to each other. We can observe a strong linear relationship in the below figure and conclude that Total Working Years is a time dependent covariate.
  
-      Figure-32 Schoenfeld residuals for Total Working Years
+![alt tag]( https://cloud.githubusercontent.com/assets/19517513/17773606/27173b1c-651d-11e6-9f9d-28e3d4788ac9.png)
+
+Figure-32 Schoenfeld residuals for Total Working Years
    
 Team have observed non proportionality in the Years in current role, basic trend in promotion is with less experience, employees will go to next job level in short span of time but with increase in experience, chances to get promoted to higher job level will also increase. So when an employee’s years at the company increase, his years in the current role will also increase. This can be observed in the below figure.
+
+![alt tag]( https://cloud.githubusercontent.com/assets/19517513/17773607/2717fc14-651d-11e6-8c66-a5638cb5b648.png)
 
  Figure-33 Schoenfeld residuals for Years in Current role
 
 
+**Handling Non Proportionality using Interactions**:
 
-
-
-Handling Non Proportionality using Interactions:
 To handle non proportionality, team has used interactions with respect to the years in the company. For every employee we have multiplied the non-proportional variables with years in the company and created a set of new variables which we sent as inputs to our models.
- 
  
 The actual will be calculating by the sum of coefficient of the actual variable value and the interactions value at a given point of time.
 
@@ -310,129 +318,192 @@ Team have selected all the significant variables and coded the interaction terms
 
 As said above we have modelled all the four independent hypothesis and a nested hypothesis, by a hypothesis test using degrees of freedom and determined that independent models are better explaining the covariates and hazard rate than a nested model. We have discussed all the significant covariates and hazard rates on individual event types in the below section.
 
-Note: Significant covariates are highlighted with pink color and named as significant. When the hazard rate>1, hazard is increasing with unit increase in the covariates whereas Hazard rate<1 shows that hazard is decreasing with unit increase in the covariates value.
+**Note**:Significant covariates are highlighted with pink color and named as significant. When the hazard rate>1, hazard is increasing with unit increase in the covariates whereas Hazard rate<1 shows that hazard is decreasing with unit increase in the covariates value.
 
-Retirement Event Type:
+##RetirementEvent Type:
 
 While Modelling the Retirement type as the event and all other types as censored we have got the full model which is significantly different and better than the Null model, we can observe that the fit statistics differing between model with and without covariates.
 
+![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773608/271978b4-651d-11e6-9d24-4ee3912df8bd.png)
 
  Figure-34 Model Fit Statistics for Retirement
 
-
-Important variables observed for Retirement:
+**Important variables observed for Retirement**:
 
 Below are the most important factors that are affecting the employee’s retirement throughout the company, all these variable coefficients are significantly different from zero (which is explained by P<0.05). However, if these coefficients have positive value it increases the hazard rate whereas if the coefficient is negative, it decreases the hazard rate. Few important covariates affecting retirement are Age, Business Travel, Job involvement, Years in current role, Employee Bonus, Number of companies worked with respect to time, Year in Current Role with respect to time. 
 
-Few of the important negative factors should be considered by management are:
+**Few of the important negative factors should be considered by management are**:
 
-	Hazard rate is increasing by 54 % with increase in one year of age, this states that people with high age are retiring from the company.
+Hazard rate is increasing by 54 % with increase in one year of age, this states that people with high age are retiring from the company.
 	
-	People who are travelling are frequently are retiring almost 8 times higher than the people who are travelling less. However, we only have 27 events of this type to believe in this and we need more of this event types to train the model.
-	Old people who are less involved in the job are retiring from the company.
-	People who are working overtime are retiring more.
-	Employees who do not get more bonuses in their experience are retiring more.
-	Both interactions terms Year in current role and number of companies worked are increasing hazard rate.
+People who are travelling are frequently are retiring almost 8 times higher than the people who are travelling less. However, we only have 27 events of this type to believe in this and we need more of this event types to train the model.
+
+Old people who are less involved in the job are retiring from the company.
+
+People who are working overtime are retiring more.
+
+Employees who do not get more bonuses in their experience are retiring more.
+
+Both interactions terms Year in current role and number of companies worked are increasing hazard rate.
 
 
 
-Few of the important Positive factors should be considered by management are:
-	Employees who are not working overtime has more time for retirement, or the hazard decreases for them.
-	One year increase in the current role decreases the hazard rate by almost 40%.
-Bonus Affect Employee Turnover
+**Few of the important Positive factors should be considered by management are**:
+
+Employees who are not working overtime has more time for retirement, or the hazard decreases for them.
+
+One year increase in the current role decreases the hazard rate by almost 40%.
+	
+**Bonus Affect Employee Turnover**
+
 Employee Bonus is a significant factor for people who are retiring from the company, may be this is because their salaries might be high with their experience and possibly they will expect more benefits from the company.  However, this should be decided by management as the number of events of type retiring are less.  We cannot solely depend on this saying employee’s bonus affects retirement.
  
-                              Figure-35 Hazard Ratio Estimate for Retirement
+![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773614/2722aeac-651d-11e6-9ea5-eb4a6edf281d.png)
 
+Figure-35 Hazard Ratio Estimates for Retirement
 
+##Voluntary Resignation/ Turnover
 
-Voluntary Resignation/ Turnover
 While Modelling the Voluntary Resignation type as the event and all other types as censored, we have got the full model which is significantly different and better than the Null model, we can observe that the fit statistics differing between model with and without covariates.
-                       
-                                           Figure-36 Model Fit Statistics for Voluntary Retirement
-Few of the important negative factors should be considered by management:
-	One of the major findings is that people who do not hold any stocks are leaving four times as much as people who have stocks.
-	People who are travelling frequently are retiring almost 8 times higher than the people who are travelling less.
-	People who are less satisfied with environment are twice as likely to leave the company than the others.
-	People who are less involved in the job are more likely to leave the company than the others.
-	People who are less satisfied in the job are six times more likely to leave the company than the others.
-	One increase in number of companies an employee worked actually increasing the hazard rate by 23%.
-	Interaction term more number of years in current role is increasing the hazard rate 9.2% by a factor of employee’s experience at Fermalogis.
-
-
-
-Few of the important Positive factors should be considered by management:
-	People who are not travelling are having less probability of leaving as compared to people who are travelling by 50%.
-	People with high work experience are less prone to leave the company, this states company should focus on less experienced people.
-	People who does not work overtime are leaving less from the company, Fermalogis should take care of the overtime by hiring new employees if possible.
-       We have plotted all the observation in the below figures, Significant covariates are highlighted with pink color and named as significant. Employee Bonus is not a significant factor for people leaving from the company, this can be seen in the attached screenshot below.
  
-                                       Figure-37 Hazard Ratio Estimate for Voluntary Retirement
+![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773610/271b6368-651d-11e6-932d-c3e70c03d308.png)
 
+Figure-36 Model Fit Statistics for Voluntary Retirement
 
-
-Combined model for involuntary resignation and job termination:
-Though we modelled differently for involuntary resignation and termination event types, after fit statistics check we determined that a nested model with both involuntary and termination is doing better than the individual models. 
-Modelling the involuntary Resignation and termination as the event and all other types as censored we have got the full model which is significantly different and better than the Null model, we can observe that the fit statistics differing between model with and without covariates.
-                                                     
-                                      Figure-38 Model Fit Statistics for involuntary Resignation and termination
 Few of the important negative factors should be considered by management:
-	People who are less satisfied with environment are twice as likely to leave the company than the others.
-	People who are staying far away from office are having higher hazard rate.
-	People who do not hold any stocks are leaving more than the people who have stocks by 75%.
-	With respect to time, years in current role and number of companies worked are increasing the hazard rate.
+
+One of the major findings is that people who do not hold any stocks are leaving four times as much as people who have stocks.
+
+People who are travelling frequently are retiring almost 8 times higher than the people who are travelling less.
+	
+People who are less satisfied with environment are twice as likely to leave the company than the others.
+
+People who are less involved in the job are more likely to leave the company than the others.
+
+People who are less satisfied in the job are six times more likely to leave the company than the others.
+
+One increase in number of companies an employee worked actually increasing the hazard rate by 23%.
+
+Interaction term more number of years in current role is increasing the hazard rate 9.2% by a factor of employee’s experience at Fermalogis.
+
+
+
 Few of the important Positive factors should be considered by management:
-	People who are not travelling are having less probability of leaving as compared to people who are travelling almost by five times.
-	People who do not work overtime are leaving less from the company, Fermalogis should take care of the overtime by hiring new employees if possible.
-	Interestingly in this sector people who are less satisfied are staying in the company.
-	Increase in total working years and years in current role is reducing the hazard rate, this can be said as experienced people are less terminated from the organization.
-	Total experience of an employee is reducing hazard rate.
+
+People who are not travelling are having less probability of leaving as compared to people who are travelling by 50%.
+	
+People with high work experience are less prone to leave the company, this states company should focus on less experienced people.
+
+People who does not work overtime are leaving less from the company, Fermalogis should take care of the overtime by hiring new employees if possible.
+      
+We have plotted all the observation in the below figures, Significant covariates are highlighted with pink color and named as significant. Employee Bonus is not a significant factor for people leaving from the company, this can be seen in the attached screenshot below.
+ 
+![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773612/27202ec0-651d-11e6-8cd1-c8b70d5e5b86.png)
+
+Figure-37 Hazard Ratio Estimates for Voluntary Retirement
+
+
+
+##Combined model for involuntary resignation and job termination:
+
+Though we modelled differently for involuntary resignation and termination event types, after fit statistics check we determined that a nested model with both involuntary and termination is doing better than the individual models. 
+
+Modelling the involuntary Resignation and termination as the event and all other types as censored we have got the full model which is significantly different and better than the Null model, we can observe that the fit statistics differing between model with and without covariates.
+ 
+  ![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773611/271d98ea-651d-11e6-82f8-44ce48346399.png)
+
+Figure-38 Model Fit Statistics for involuntary Resignation and termination
+
+Few of the important negative factors should be considered by management:
+
+People who are less satisfied with environment are twice as likely to leave the company than the others.
+	
+People who are staying far away from office are having higher hazard rate.
+	
+People who do not hold any stocks are leaving more than the people who have stocks by 75%.
+	
+With respect to time, years in current role and number of companies worked are increasing the hazard rate.
+
+Few of the important Positive factors should be considered by management:
+
+People who are not travelling are having less probability of leaving as compared to people who are travelling almost by five times.
+
+People who do not work overtime are leaving less from the company, Fermalogis should take care of the overtime by hiring new employees if possible.
+
+Interestingly in this sector people who are less satisfied are staying in the company.
+
+Increase in total working years and years in current role is reducing the hazard rate, this can be said as experienced people are less terminated from the organization.
+
+Total experience of an employee is reducing hazard rate.
+
 Interactions in this case are significant but Employee Bonus is not a significant factor for people leaving from the company due to involuntary and termination types, this can be seen in the attached screenshot below.
  
-             Figure-39 Hazard Ratio Estimate for involuntary Resignation and Job termination
+  ![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773618/272853b6-651d-11e6-8883-262df1bc0e71.png)
+
+ Figure-39 Hazard Ratio Estimates for involuntary Resignation and Job termination
 
 
 
-Conclusion
-	Frequency plot of all event types shown in Figure 20 indicates frequency for each turnover type is different from one another which means each attrition type is at different rate so we can say that all turnover types are different. We have plotted LLS graphs to check the linearity between turnover types and found that Voluntary Resignation and Job termination are linearly related. To check this point further, we have applied proportional hazards model and found that as per Wilcoxon test as well (Fig 21), their p-values is not significant and they are not different thus we used Voluntary Resignation and Job termination together.
-	Team also performed log ratio test and found that p-value for all the combined event type is 0 (Figure 25) which means all events types are different and need to handle separately. We performed log Ratio test on combined model of Voluntary Resignation and Job termination and found p-value as 0.193 which is not significant (Figure29) hence we can use the nested model in this case.
-	For Retirement – Age, Job Involvement, Business Travel, Bonus and Interaction Variable Years in current role are significant.
-	For Voluntary Resignation-Stocks, Overtime, Business Travel, Environment Satisfaction, Job satisfaction and Years in current role are significant.
-	For Involuntary Resignation and Job termination – Environment Satisfaction, Distance from home, Stocks and Interaction variable -Years in current roles and number of companies worked are significant.
-	Team found that Employee Bonus is a significant factor for employees who are retiring from the company but has not significant effect on the other event types.
-	Team found three variables which are not proportional with respect to hazard – NumCompaniesWorked, TotalWorkingYears and YearsInCurrentRole
-Recommendations:
+##Conclusion:
+
+Frequency plot of all event types shown in Figure 20 indicates frequency for each turnover type is different from one another which means each attrition type is at different rate so we can say that all turnover types are different. We have plotted LLS graphs to check the linearity between turnover types and found that Voluntary Resignation and Job termination are linearly related. To check this point further, we have applied proportional hazards model and found that as per Wilcoxon test as well (Fig 21), their p-values is not significant and they are not different thus we used Voluntary Resignation and Job termination together.
+	
+Team also performed log ratio test and found that p-value for all the combined event type is 0 (Figure 25) which means all events types are different and need to handle separately. We performed log Ratio test on combined model of Voluntary Resignation and Job termination and found p-value as 0.193 which is not significant (Figure29) hence we can use the nested model in this case.
+	
+For Retirement – Age, Job Involvement, Business Travel, Bonus and Interaction Variable Years in current role are significant.
+
+For Voluntary Resignation-Stocks, Overtime, Business Travel, Environment Satisfaction, Job satisfaction and Years in current role are significant.
+	
+For Involuntary Resignation and Job termination – Environment Satisfaction, Distance from home, Stocks and Interaction variable -Years in current roles and number of companies worked are significant.
+	
+Team found that Employee Bonus is a significant factor for employees who are retiring from the company but has not significant effect on the other event types.
+	
+Team found three variables which are not proportional with respect to hazard – NumCompaniesWorked, TotalWorkingYears and YearsInCurrentRole
+	
+##Recommendations:
+
 Though we have highlighted important variables affecting individual turnover types throughout the report, we have few common variables which hold good for all the employees.
-	Management should take care of the overtime of the employees by hiring few temporary employees and shifting the extra work.
-	Management should try reducing the Business travel associated with employees, as we have seen people who are travelling more are more likely to leave the company.
-	We have observed a strong positive trend between stocks and the employee turnover, encouraging employees towards holding own stocks in the company might reduce the turnover rate.
-	By motivating employees with good leadership and encouraging them with their work can lead to a better job satisfaction and involvement levels. This might reduce the turnover rate associated with these factors.
-	  One major factor is environment satisfaction in turnover rate, by having fun events among the employees FermaLogis can actually build a strong bond between the employees. This will help to increase the environment satisfaction levels among employees.
+
+Management should take care of the overtime of the employees by hiring few temporary employees and shifting the extra work.
+
+Management should try reducing the Business travel associated with employees, as we have seen people who are travelling more are more likely to leave the company.
+
+We have observed a strong positive trend between stocks and the employee turnover, encouraging employees towards holding own stocks in the company might reduce the turnover rate.
+
+By motivating employees with good leadership and encouraging them with their work can lead to a better job satisfaction and involvement levels. This might reduce the turnover rate associated with these factors.
+
+One major factor is environment satisfaction in turnover rate, by having fun events among the employees FermaLogis can actually build a strong bond between the employees. This will help to increase the environment satisfaction levels among employees.
 
 
+##Appendix:
 
+**Individual models for In-Voluntary Resignation and termination**:
 
+**Implementing PH Reg using programming step for the type In-Voluntary Resignation**:
 
-
-
-
-Appendix
-Individual models for In-Voluntary Resignation and termination.
-Implementing PH Reg using programming step for the type In-Voluntary Resignation:
 We have plotted all the observation in the below figures, Significant covariates are highlighted with pink color and named as significant, and when the hazard rate>1, hazard is increasing with unit increase in the covariates whereas Hazard rate<1 shows that hazard is decreasing with unit increase in the covariates value. These are the few covariates which management can look into when considering the retired people. Interactions in this case are significant.
  
+  ![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773615/2724d380-651d-11e6-977c-c80e9ef05a71.png)
+
 Figure 1 Model Fit Statistics for covariates
  
+   ![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773613/27208da2-651d-11e6-8938-e4cc403baf24.png)
+
 Figure 2 Analysis of Maximum Likelihood Estimates
+
 
 Termination event type model:
  
+    ![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773617/2727c630-651d-11e6-8568-afb4ea8fa3d1.png)
+
 Figure 3 Termination covariates
  
+     ![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773616/2726c08c-651d-11e6-9bb7-94cfc26c9db2.png)
+
 Figure 4 Analysis of likelihood estimates for covariates
 
-SAS project code for employee attrition at Fermalogis is attached for reference –
- 
+
+
 
 
 
