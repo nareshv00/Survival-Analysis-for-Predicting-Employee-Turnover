@@ -93,7 +93,7 @@ Figure-6 Business Travel Vs Turnover Types
                                                               
 **Stock Vs Turnover Types** -We have created a stock variable to check the effect of this covariate on different turnover types and have plotted their respective survival curves.
 
-**Retirement ** – (-2Log(LR)) test shows that P-values for the employees having stock and not having stocks is not significant which means survival probability for retired employees is independent of stock variable and is almost same for both employees having the stocks and not having the stocks.
+**Retirement ** : (-2Log(LR)) test shows that P-values for the employees having stock and not having stocks is not significant which means survival probability for retired employees is independent of stock variable and is almost same for both employees having the stocks and not having the stocks.
    
 ![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773580/26f3bb10-651d-11e6-907a-0a05700ee227.png)
 
