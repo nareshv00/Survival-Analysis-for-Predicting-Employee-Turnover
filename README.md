@@ -1,35 +1,7 @@
 # Survival-Analysis-for-Predicting-Employee-Turnover
-
- 
-
-                                   
-Contents
-Executive Summary	2
-Business Problem	2
-Data Overview	3
-Data Pre-Processing	4
-Methodology	5
-Data Exploration	6
-Hazards for event type together or Separately	15
-Modelling	19
-Checking Non Proportionality:	20
-Attributes increase/decrease the hazard rates for certain event types	27
-Bonus Affect Employee Turnover	29
-Conclusion	34
-Recommendations:	35
-Appendix	36
-
-
-
-
-
-
-
-
-
-
 Executive Summary 
-Employee Churn is a major problem for many firms these days. If a company does not have satisfied employees, it will not have satisfied customers and there could be possibility of not having satisfied shareholders as well. Great talent is scarce and in high demand in this competitive era and it is very hard to keep the great talent within the same organization. Apparently, it becomes utmost important to understand the drivers of employee dissatisfaction. Fermalogis, a pharmaceutical company are also facing the issue of employee turnover and in order to understand the drivers of employee dissatisfaction, the team have received the data from them to do the survival analysis which is one of the core strategic tool to understand the drivers of employee dissatisfaction.
+
+	Employee Churn is a major problem for many firms these days. If a company does not have satisfied employees, it will not have satisfied customers and there could be possibility of not having satisfied shareholders as well. Great talent is scarce and in high demand in this competitive era and it is very hard to keep the great talent within the same organization. Apparently, it becomes utmost important to understand the drivers of employee dissatisfaction. Fermalogis, a pharmaceutical company are also facing the issue of employee turnover and in order to understand the drivers of employee dissatisfaction, the team have received the data from them to do the survival analysis which is one of the core strategic tool to understand the drivers of employee dissatisfaction.
 To start with, our team have used SAS studio to analyze the data of 1470 employees having 77 different variables to not only identify the number or percentage of workers who leave an organization due to different attrition types such as Involuntary, Termination, Voluntary and Retirement but also the factors causing attrition. The team has built different models using Proportional Hazards based on Cox’s partial likelihood estimate method to estimate regression models with censored data and to investigate the time to event data. Cox's semiparametric modeling allows for no assumptions to be made about the parametric distribution of the survival times, making the method considerably more robust and helped us in identifying some variables which has non proportional effect on hazard such as NumCompaniesWorked, TotalWorkingYears, YearsInCurrentRole. After model evaluation, the team has identified that all the event types are independent of each other and need to be handled separately so team has decided to employ competing risks to analyze the different types of turnover. With this analysis, the team can enable Fermalogis to identify the key factors for voluntary resignation which is the main concern for the company and preemptively address costly departures.
 Business Problem
   Recently, Fermalogis found that their rival companies are recruiting the trained employees of Fermalogis with high transfer fees and higher salaries which has created a threat of losing the talent from their organization. COO - Larry Hansen wanted to know who are leaving their company and why they are leaving so that they can take the necessary measures to prevent their employees from leaving. They have elaborated the data in basically two groups:
