@@ -93,7 +93,7 @@ Figure-6 Business Travel Vs Turnover Types
                                                               
 **Stock Vs Turnover Types** -We have created a stock variable to check the effect of this covariate on different turnover types and have plotted their respective survival curves.
 
-**Retirement ** : (-2Log(LR)) test shows that P-values for the employees having stock and not having stocks is not significant which means survival probability for retired employees is independent of stock variable and is almost same for both employees having the stocks and not having the stocks.
+**Retirement**  -(-2Log(LR)) test shows that P-values for the employees having stock and not having stocks is not significant which means survival probability for retired employees is independent of stock variable and is almost same for both employees having the stocks and not having the stocks.
    
 ![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773580/26f3bb10-651d-11e6-907a-0a05700ee227.png)
 
@@ -105,71 +105,98 @@ Figure-8 Survival curves of Retirement w.r.t stock
 
 **Involuntary resignation ** - It has a significant difference between people who are holding stocks and people does not, People who holds stock might not want to leave the company, one possibility is when they have health or personal issues they might take leave and get well come back to the organization. Motivating people towards holding stocks can actually reduce this type of turnover.
      
+![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773586/26fc49ce-651d-11e6-9b8c-584a3470cfbb.png)
+
 Figure-9 P value test of stocks on Involuntary Resignation                                                           
 
- 
+![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773582/26f6d82c-651d-11e6-829d-6a0de9293c3b.png)
+
 Figure-10 Survival curves of Involuntary resignation w.r.t stock
 
-Job termination - Team observed that job termination is also affected by employees holding stocks in the company up to 25 years’ tenure at the company & later there is no significant difference between two groups of people having stocks and not stock holders.
+
+**Job termination** - Team observed that job termination is also affected by employees holding stocks in the company up to 25 years’ tenure at the company & later there is no significant difference between two groups of people having stocks and not stock holders.
           
+![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773582/26f6d82c-651d-11e6-829d-6a0de9293c3b.png)
+   
 Figure-11 P value test of stocks on Job Termination
+
+![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773587/26fedcb6-651d-11e6-8539-9df90a2711d3.png)
 
 Figure-12 Survival curves of Job termination w.r.t stock
 
-Voluntary Resignation -Employees have a flat survival curve when they hold stocks in the company which explains they are not the ones who are leaving the company. However, people without stocks have a decaying survival rate and mostly they are leaving. Management can look into this aspect to mitigate this risk.  We can observe that there is a significant difference between the equality among these two groups of employees. Motivating people towards holding stocks can actually reduce this type of turnover.
-          
+
+**Voluntary Resignation** -Employees have a flat survival curve when they hold stocks in the company which explains they are not the ones who are leaving the company. However, people without stocks have a decaying survival rate and mostly they are leaving. Management can look into this aspect to mitigate this risk.  We can observe that there is a significant difference between the equality among these two groups of employees. Motivating people towards holding stocks can actually reduce this type of turnover.
+       
+![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773584/26fa6064-651d-11e6-9c7f-1098c37262d0.png)
+  
 Figure-13 P value test of stocks on Voluntary Resignation
  
-Figure-14 Survival curves of Voluntary resignation w.r.t stock     
-Job satisfaction Vs Turnover Type – Team has created a variable “Satisfied” and plotted SGPLOT to check the effect of job satisfaction. employees who are not satisfied are leaving more among voluntary resignation type. this might be one of the reason causing employees to leave the company. However, in all the other three types majority of people are satisfied with their jobs though they are leaving the company.
+ ![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773589/270102b6-651d-11e6-815b-300fddbbdb89.png)
+
+Figure-14 Survival curves of Voluntary resignation w.r.t stock  
+
+**Job satisfaction Vs Turnover Type** – Team has created a variable “Satisfied” and plotted SGPLOT to check the effect of job satisfaction. employees who are not satisfied are leaving more among voluntary resignation type. this might be one of the reason causing employees to leave the company. However, in all the other three types majority of people are satisfied with their jobs though they are leaving the company.
  
+  ![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773588/270043da-651d-11e6-839f-fd22ca667d9f.png)
+
  Figure-15 Satisfied Vs Turnover Types
 
 Education Field Vs Turnover Type – Team found that education field is also affecting the attrition rate as in all the event types, employees belongs to Life Sciences and medical field are more prone to leave the company in comparison to other education fields.
  
-                   
-                       Figure-16 Education Field Vs Turnover Types
+![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773592/2705f08c-651d-11e6-85e3-28ad8aa92f18.png)
 
-Overtime Vs Turnover Type – Overtime shows whether an employee works overtime more than 10 hours a week. By plotting Overtime Vs Turnover types, team found that employees who are doing more overtime are resigning the company in three types (voluntary, Involuntary, Retirement) and those who are not doing overtime, they are getting terminated from the company. There seems a possibility of overtime as one of the performance attribute for the company which is causing work pressure on Voluntary Retired employees and poor performance attribute towards Job terminated employees.
+Figure-16 Education Field Vs Turnover Types
 
- 
-    Figure-17 Overtime Vs Turnover Types
+**Overtime Vs Turnover Type** – Overtime shows whether an employee works overtime more than 10 hours a week. By plotting Overtime Vs Turnover types, team found that employees who are doing more overtime are resigning the company in three types (voluntary, Involuntary, Retirement) and those who are not doing overtime, they are getting terminated from the company. There seems a possibility of overtime as one of the performance attribute for the company which is causing work pressure on Voluntary Retired employees and poor performance attribute towards Job terminated employees.
+
+![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773590/27034fbc-651d-11e6-8762-d35125e4b0ab.png)
+
+Figure-17 Overtime Vs Turnover Types
     
-Gender Vs Turnover Type –  Gender is always considered an important variable in understanding the development of a turnover decision. To test this fact, we have plotted Gender Vs Turnover type and found that men has greater rates of actual turnover than women in each event type but might be it is because the proportion of females is less in comparison to men.
+**Gender Vs Turnover Type** –  Gender is always considered an important variable in understanding the development of a turnover decision. To test this fact, we have plotted Gender Vs Turnover type and found that men has greater rates of actual turnover than women in each event type but might be it is because the proportion of females is less in comparison to men.
             
-                                                        Figure-18 Gender Vs Turnover Types
+![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773591/27058782-651d-11e6-9462-f40ca3aab049.png)
+
+Figure-18 Gender Vs Turnover Types
 
 To check the above made observation, we have plotted frequency table plot and found that males are more in number in comparison to females that might be the reason males are leaving more in comparison to females and turnover is independent of Gender.
         
-        
-                                           Figure-19 Frequency table for Gender Vs Turnover Types                        
+![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773596/2709ad44-651d-11e6-846b-40ac46b43b2b.png)
+
+Figure-19 Frequency table for Gender Vs Turnover Types                        
 
 
-Hazards for event type together or Separately– Whenever a dataset is characterized by several event types, which can be analyzed and interpreted in different ways, it is needed to decide whether we should have considered all the events types together or handle them separately. For this our team decided to go with competing risks in survival analysis which distinguishes between different types of events and when that type of event is taken into account, the other types are accepted as censored.
+**Hazards for event type together or Separately**– Whenever a dataset is characterized by several event types, which can be analyzed and interpreted in different ways, it is needed to decide whether we should have considered all the events types together or handle them separately. For this our team decided to go with competing risks in survival analysis which distinguishes between different types of events and when that type of event is taken into account, the other types are accepted as censored.
 
 
 Looking at the below Proc FREQ results of all event types, we can say that they are not same for all event types. There is total of 225 employees out of 1470 employees in Fermalogis are leaving the company because of Retirement (Type 0), Voluntary (Type 1), Involuntary (Type 3) and Job Termination (Type 4) and all are attiring at different frequencies so all these event types are different. On further analysis, we can say that employees leaving the company voluntarily is 47%(105/225) of the other employees leaving the company due to retirement, job termination and Involuntary and has become a concern for the company.
  
-                                       Figure-20 Frequency plot for different turnover Types  
+ ![alt tag](https://cloud.githubusercontent.com/assets/19517513/17773594/2708f61a-651d-11e6-8471-ce146f82463c.png)
+
+Figure-20 Frequency plot for different turnover Types  
                                        
 To check whether hazards for all event types are linearly related with each other, our team has tested each event type individually, we have created one variable called event which has censored the other types and then team has combined all the event types to check whether they are linearly related with each other based on Log-log Survival plot(LLS) which is used for Weibull using PROC LIFETEST DATA and also helps in understanding the shape of the hazard function.”Diff = all” in PROC LIFETEST combine event method is used to compare all the strata of  different turnover types.
 
 
 By looking at the p-values of Wilcoxon test, we can say that all event types are significant and different from each other except Involuntary Resignation and Job termination because these two event types are not significant and there seems a possibility of combining these two event types. 
  
- 
-                                       Figure-21  p-value comparison between different event type
+![alt tag]( https://cloud.githubusercontent.com/assets/19517513/17773593/2708b6fa-651d-11e6-8c23-7456b6676de3.png)
+
+ Figure-21  p-value comparison between different event type
 
 
 To prove the above statement, we have plotted the Survival estimates which also shows that employees who are falling under the event of Involuntary resignation and Job Termination are linearly proportional and there seems a possibility that these events can be handled together.
 
- 
-                                                      Figure-22 Survival estimates for different turnover Types  
+ ![alt tag]( https://cloud.githubusercontent.com/assets/19517513/17773595/27099714-651d-11e6-9613-25f1a11aed97.png)
+
+  Figure-22 Survival estimates for different turnover Types  
 
 
 To add to the above point, our team has plotted LLS graphs for all 4 event types -Involuntary, Job termination, Retirement and Voluntary Resignation and graph seem that ω values are same for Involuntary and Terminated employees. But to check the possibility of using both event types together, our team has decided to apply PHREG model for each event type and combined event type
  
-                                  Figure-23 LLS plot for different turnover Types  
+  ![alt tag]( https://cloud.githubusercontent.com/assets/19517513/17773597/270b1f30-651d-11e6-93a6-079180c7d7a0.png)
+
+ Figure-23 LLS plot for different turnover Types  
 
 
 Modelling using PHREG for each event type shows the value for Nested event type as 2221.764, Retirement is 128.64, Voluntary Resignation is 971.656, Involuntary as 499.934 and termination as 379.974
